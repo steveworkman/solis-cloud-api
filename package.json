@@ -2,10 +2,10 @@
   "name": "solis-cloud-api",
   "version": "1.0.0",
   "description": "NodeJS API for Solis Cloud",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "node dist/index.js"
+    "test": "node tests/index.spec.js"
   },
   "engines": {
     "node": ">=16.0.0"
