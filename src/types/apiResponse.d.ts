@@ -1,12 +1,33 @@
+export type SolisAPIResponse<T> = {
+  success: boolean;
+  code: string;
+  msg: string;
+  data: T;
+};
+
 export type UserStationListResponse = {
-  page: number; // Result List
-  stationStatusVo: number; // Number of results
-  total: number; // Total number of results
-  records: Array<any>; // Power Station List
-  all: number; // Total number of power stations
-  normal: number; // Number of normal power stations
-  offline: number; // Number of offline power stations
-  fault: number; // Number of failed power stations
+  stationStatusVo: {
+    all: number; // Total number of power stations
+    normal: number; // Number of normal power stations
+    offline: number; // Number of offline power stations
+    fault: number; // Number of failed power stations
+    building: number;
+    mppt: number;
+  };
+  mpptSwitch: number; // MPPT switch
+  page: {
+    records: Array<UserStationDetails>; // Power Station List
+    total: number; // Total number of results
+    size: number; // Page size
+    current: number; // Current page number
+    orders: Array<any>;
+    optimizeCountSql: boolean;
+    searchCount: boolean;
+    pages: number; // Total number of pages
+  };
+};
+
+export type UserStationDetails = {
   id: number; // Power station ID
   userId: number; // Owner ID
   capacity: string; // Installed capacity

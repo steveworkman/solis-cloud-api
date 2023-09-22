@@ -1,6 +1,9 @@
 import { makeAPICall } from "./api.js";
 import { config } from "dotenv";
-import type { UserStationListResponse } from "./types/apiResponse.js";
+import type {
+  SolisAPIResponse,
+  UserStationListResponse,
+} from "./types/apiResponse.js";
 config();
 
 const userStationList = {
@@ -17,7 +20,7 @@ export default function (baseUrl: string, key: string, secret: string) {
       pageNo = 1,
       pageSize = 20,
       NmiCode: string
-    ): Promise<UserStationListResponse> => {
+    ): Promise<SolisAPIResponse<UserStationListResponse>> => {
       return await makeAPICall(
         userStationList.verb,
         userStationList.uri,
