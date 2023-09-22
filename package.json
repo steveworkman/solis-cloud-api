@@ -4,7 +4,7 @@
   "description": "NodeJS API for Solis Cloud",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -d",
     "test": "node tests/index.spec.js"
   },
   "engines": {

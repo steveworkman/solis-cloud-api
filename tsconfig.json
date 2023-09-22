@@ -8,7 +8,7 @@
     "allowJs": true,
     "outDir": "./dist",
     "lib": ["ESNext", "DOM"],
-    "types": ["node", "node-fetch"]
+    "types": ["node", "node-fetch", "src/types"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
