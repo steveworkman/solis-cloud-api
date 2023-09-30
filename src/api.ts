@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import "isomorphic-fetch";
 
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone.js";

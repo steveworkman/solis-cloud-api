@@ -7,9 +7,10 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "outDir": "./dist",
-    "lib": ["ESNext", "DOM"],
-    "types": ["node", "node-fetch", "src/types"]
+    "lib": ["ES2021", "DOM"],
+    "types": ["node"],
+    "declaration": false
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": []
 }

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "NodeJS API for Solis Cloud",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -d",
     "test": "node tests/index.spec.js"
@@ -21,12 +22,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.6.2",
+    "isomorphic-fetch": "^3.0.0",
     "md5": "^2.3.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "dayjs": "^1.11.9",
-    "dotenv": "^16.3.1",
-    "node-fetch": "^3.3.2"
+    "dotenv": "^16.3.1"
   }
 }
