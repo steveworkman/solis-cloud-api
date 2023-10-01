@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -d",
-    "test": "node tests/index.spec.js"
+    "test": "node --loader tsx --test tests/index.spec.ts"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -24,6 +24,7 @@
     "@types/node": "^20.6.2",
     "isomorphic-fetch": "^3.0.0",
     "md5": "^2.3.0",
+    "tsx": "^3.13.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
