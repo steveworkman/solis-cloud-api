@@ -102,118 +102,254 @@ export type UserStationDetails = {
 };
 
 export type PowerStationDetails = {
-  id: number; //Power Station id
-  userId: number; //Owner ID
-  capacity: string; //Installed Capacity
-  capacityStr: string; //Installed Capacity Unit
-  dayEnergy: number; //Today Generation
-  dayEnergyStr: string; //Today Generation Unit
-  monthEnergy: number; //Month Generation
-  monthEnergyStr: string; //Month Generation Unit
-  yearEnergy: number; //Year Generation
-  yearEnergyStr: string; //Year Generation Unit
-  allEnergy: number; //Total Generation
-  allEnergyStr: string; //Total Generation Unit
-  dayInCome: number; //Today Revenue
-  dayInComeUnit: string; //Today Revenue Unit
-  monthInCome: number; //Month Revenue
-  monthInComeUnit: string; //Month Revenue Unit
-  yearInCome: number; //Year Revenue
-  yearInComeUnit: string; //Year Revenue Unit
-  allInCome: number; //Total Revenue
-  allInComeUnit: string; //Total Revenue Unit
-  fullHour: number; //Peak Hours
-  picName: string; //Pictures
-  power: number; //Power
-  powerStr: string; //Power Unit
-  dip: number; //Tilt Angle
-  azimuth: number; //Azimuth Angle
-  price: string; //Revenue per kilowatt hour
-  state: number; //Power station status  "1：Online 2：Offline 3：Alarm"
-  dataTimestamp: number; //Power station update time Timestamp
-  money: string; //Currency
-  brand: string; //Brand
-  condTxtN: string; //Night Weather
-  condTxtD: string; //Daytime Weather
-  tmpMax: string; //Max Temperature
-  tmpMin: string; //Lowest Temperature
-  tmpUnit: string; //Temperature Unit
-  sr: string; //Sunris Time
-  ss: string; //Sundown Time
-  windSpd: string; //"Wind speed, km/hr"
-  windDir: string; //Wind direction
-  powerStationNumTree: string; //植树
-  powerStationNumTreeUnit: string; //Tree Unit
-  powerStationAvoidedCo2: string; //CO2 reduction
-  powerStationAvoidedCo2Unit: string; //CO2 reduction unit
-  module: number; //Module Number
-  batteryPower: number; //Battery Power
-  batteryPowerStr: string; //Battery Power unit
-  batteryPowerPec: number; //Battery Power percentage
-  batteryPercent: number; //Battery SOC
-  batteryDischargeEnergy: number; //"Battery  this  day  discharge energy"
-  batteryDischargeEnergyStr: string; //"Battery  this  day  discharge unit"
-  batteryDischargeMonthEnergy: number; //"Battery        this        month discharge energy"
-  batteryDischargeMonthEnergyStr: string; //"Battery        this        month discharge unit"
-  batteryDischargeYearEnergy: number; //"Battery  this  year  discharge energy"
-  batteryDischargeYearEnergyStr: string; //"Battery  this  year  discharge unit"
-  batteryDischargeTotalEnergy: number; //"Battery disChargeTotalEnergy"
-  batteryDischargeTotalEnergyStr: string; //"Battery disChargeTotalEnergy unit"
-  batteryChargeEnergy: number; //"Battery   this    day   charge energy"
-  batteryChargeEnergyStr: string; //Battery this day charge unit
-  batteryChargeMonthEnergy: number; //"Battery  this  month  charge energy"
-  batteryChargeMonthEnergyStr: string; //"Battery  this  month  charge unit"
-  batteryChargeYearEnergy: number; //"Battery   this   year   charge energy"
-  batteryChargeYearEnergyStr: string; //"Battery   this   year   charge unit"
-  batteryChargeTotalEnergy: number; //batteryChargeTotalEnergy
-  batteryChargeTotalEnergyStr: string; //"batteryChargeTotalEnergy unit"
-  psum: number; //Meter power
-  psumStr: string; //Meter power unit
-  psumPec: number; //Meter powerPercentage
-  gridPurchasedDayEnergy: number; //"Meter      today      purchase energy"
-  gridPurchasedDayEnergyStr: string; //"Meter      today      purchase energy unit"
-  gridPurchasedMonthEnergy: number; //"Meter  this  month  purchase energy"
-  gridPurchasedMonthEnergyStr: string; //"Meter  this  month  purchase energy unit"
-  gridPurchasedYearEnergy: number; //"Meter   this   year   purchase energy"
-  gridPurchasedYearEnergyStr: string; //"Meter   this   year   purchase energy unit"
-  gridPurchasedTotalEnergy: number; //"Meter       total       purchase energy"
-  gridPurchasedTotalEnergyStr: string; //"Meter       total       purchase energy unit"
-  gridSellDayEnergy: number; //Meter today sell energy
-  gridSellDayEnergyStr: string; //"Meter   today   sell   energy unit"
-  gridSellMonthEnergy: number; //"Meter    this    month    sell energy"
-  gridSellMonthEnergyStr: string; //"Meter    this    month    sell energy unit"
-  gridSellYearEnergy: number; //Meter this year sell energy
-  gridSellYearEnergyStr: string; //"Meter this year sell energy unit"
-  gridSellTotalEnergy: number; //Meter total sell energy
-  gridSellTotalEnergyStr: string; //Meter total sell energy unit
-  familyLoadPower: number; //Load power
-  familyLoadPowerStr: string; //Load power unit
-  familyLoadPowerPec: number; //Load powerPercentage
-  homeLoadEnergy: number; //Today load energy
-  homeLoadEnergyStr: string; //Today load energy unit
-  homeLoadMonthEnergy: number; //Monthly load energy
-  homeLoadMonthEnergyStr: string; //Monthly load energy unit
-  homeLoadYearEnergy: number; //Yearly load energy
-  homeLoadYearEnergyStr: string; //Yearly load energy unit
-  homeLoadTotalEnergy: number; //Total load energy
-  homeLoadTotalEnergyStr: string; //Total load energy unit
-  inverterPower: string; //Sum of inverter AC power
-  nmiCode: string; //Nmi code
-  country: number; //Country id
-  countryStr: string; //Country name
-  region: number; //Region id,
-  regionStr: string; //Region name,
-  city: number; //City id,
-  cityStr: string; //City Name,
-  county: number; //District id,
-  countyStr: string; //District Name,
-  timeZone: number; //Timezone,
-  timeZoneName: string; //Timezone name,
-  timeZoneStr: string; //Time zone format string,
-  timeZoneId: number; //Timezone id,
-  daylight: number; //Daylight saving,
-  createDate: number; //Create time,
-  stationTypeNew: number; //Type :Default 0; // ,"1     –     Grid     tied;2     – Grid-tied+Meter  at   load side;3  -  Grid-tied+Meter at  grid  side;4  –  Hybrid+ Meter   at   load   side;5   - Hybrid+   Meter   at   grid side ;"
-  fisPowerTime: number; //First power-on time,
-  fisGenerateTime: number; //First generation time,
+  id: string;
+  dataTimestamp: string;
+  fullHour: number;
+  monthCarbonDioxide: number;
+  installerId: string;
+  installer: string;
+  userId: string;
+  sno: string;
+  country: string;
+  countryStr: string;
+  region: string;
+  regionStr: string;
+  city: string;
+  cityStr: string;
+  state: number;
+  dip: number;
+  azimuth: number;
+  power: number;
+  timeZone: number;
+  timeZoneName: string;
+  timeZoneStr: string;
+  timeZoneId: string;
+  daylight: number;
+  powerStr: string;
+  price: number;
+  capacity: number;
+  capacityStr: string;
+  capacityPercent: number;
+  capacity1: number;
+  picName: string;
+  dayEnergy: number;
+  dayEnergyStr: string;
+  monthEnergy: number;
+  monthEnergyStr: string;
+  yearEnergy: number;
+  yearEnergyStr: string;
+  allEnergy: number;
+  allEnergyStr: string;
+  allEnergy1: number;
+  updateDate: number;
+  type: number;
+  epmType: number;
+  gridSwitch: number;
+  shareProcess: number;
+  dcInputType: number;
+  stationTypeNew: number;
+  gridPurchasedTotalEnergy: number;
+  gridSellTotalEnergy: number;
+  homeLoadTotalEnergy: number;
+  oneSelf: number;
+  homeLoadTodayEnergy: number;
+  money: string;
+  condTxtD: string;
+  condTxtN: string;
+  condCodeD: string;
+  condCodeN: string;
+  simFlowState: number;
+  jxbType: number;
+  createDate: number;
+  createDateStr: string;
+  connectTime: number;
+  accessTime: number;
+  fisPowerTime: number;
+  fisPowerTimeStr: string;
+  fisGenerateTime: number;
+  fisGenerateTimeStr: string;
+  generateDays: number;
+  generateDaysContinuous: number;
+  inverterCount: number;
+  orgCode: string;
+  visitorCount: number;
+  daylightSwitch: number;
+  daylightType: number;
+  fullHourStr: string;
+  capacityPec: string;
+  dipStr: string;
+  azimuthStr: string;
+  dateTime: string;
+  offset: number;
+  offsetStr: string;
+  dayInCome: number;
+  dayInComeUnit: string;
+  monthInCome: number;
+  monthInComeUnit: string;
+  yearInCome: number;
+  yearInComeUnit: string;
+  allInCome: number;
+  allInCome1: number;
+  allInComeUnit: string;
+  powerStationNumTree: number;
+  powerStationNumTreeUnit: string;
+  powerStationAvoidedCo2: number;
+  powerStationAvoidedCo2Unit: string;
+  powerPec: string;
+  porwerPercent: number;
+  batteryPower: number;
+  batteryPowerStr: string;
+  batteryPowerPec: string;
+  batteryPowerZheng: number;
+  batteryPowerFu: number;
+  batteryPercent: number;
+  familyLoadPercent: number;
+  psum: number;
+  psumStr: string;
+  psumPec: string;
+  psumZheng: number;
+  psumFu: number;
+  gridPurchasedTotalEnergyStr: string;
+  gridSellTotalEnergyStr: string;
+  gridPurchasedEnergy: number;
+  gridPurchasedEnergyStr: string;
+  gridSellEnergy: number;
+  gridSellEnergyStr: string;
+  gridPurchasedDayEnergy: number;
+  gridPurchasedDayEnergyStr: string;
+  gridSellDayEnergy: number;
+  gridSellDayEnergyStr: string;
+  gridPurchasedMonthEnergy: number;
+  gridPurchasedMonthEnergyStr: string;
+  gridSellMonthEnergy: number;
+  gridSellMonthEnergyStr: string;
+  gridPurchasedYearEnergy: number;
+  gridPurchasedYearEnergyStr: string;
+  gridSellYearEnergy: number;
+  gridSellYearEnergyStr: string;
+  batteryDischargeEnergy: number;
+  batteryDischargeEnergyStr: string;
+  batteryChargeEnergy: number;
+  batteryChargeEnergyStr: string;
+  batteryDischargeMonthEnergy: number;
+  batteryDischargeMonthEnergyStr: string;
+  batteryChargeMonthEnergy: number;
+  batteryChargeMonthEnergyStr: string;
+  batteryDischargeYearEnergy: number;
+  batteryDischargeYearEnergyStr: string;
+  batteryChargeYearEnergy: number;
+  batteryChargeYearEnergyStr: string;
+  batteryDischargeTotalEnergy: number;
+  batteryDischargeTotalEnergyStr: string;
+  batteryChargeTotalEnergy: number;
+  batteryChargeTotalEnergyStr: string;
+  familyLoadPower: number;
+  familyLoadPowerStr: string;
+  familyLoadPowerPec: string;
+  homeGridTodayEnergy: number;
+  homeGridTodayEnergyStr: string;
+  homeGridMonthEnergy: number;
+  homeGridMonthEnergyStr: string;
+  homeGridYearEnergy: number;
+  homeGridYearEnergyStr: string;
+  homeGridTotalEnergy: number;
+  homeGridTotalEnergyStr: string;
+  backupTodayEnergy: number;
+  backupTodayEnergyStr: string;
+  backupMonthEnergy: number;
+  backupMonthEnergyStr: string;
+  backupYearEnergy: number;
+  backupYearEnergyStr: string;
+  backupTotalEnergy: number;
+  backupTotalEnergyStr: string;
+  totalLoadPower: number;
+  totalLoadPowerStr: string;
+  bypassLoadPower: number;
+  bypassLoadPowerStr: string;
+  homeLoadEnergy: number;
+  homeLoadEnergyStr: string;
+  homeLoadTodayEnergyStr: string;
+  homeLoadMonthEnergy: number;
+  homeLoadYearEnergy: number;
+  picUrl: string;
+  weather: string;
+  sr: string;
+  ss: string;
+  tmpMax: string;
+  tmpMin: string;
+  tmpUnit: string;
+  hum: string;
+  weatherUpdateDate: string;
+  weatherUpdateDateStr: string;
+  pcpn: string;
+  pres: string;
+  windSpd: string;
+  windDir: string;
+  weatherType: number;
+  windSpeed: number;
+  windDirection: number;
+  humidity: number;
+  temp: number;
+  rainfall: number;
+  airPressure: number;
+  contribution: number;
+  screenMap: number;
+  screenGuideState: number;
+  storedInverterType: number;
+  countryShortName: string;
+  postCode: string;
+  priceGroupId: string;
+  inverterPower: number;
+  bypassAcOnoffSet: number;
+  priceMap: PriceMap;
+  sysGridPriceList?: Array<any>;
+  generatorPower: number;
+  generatorPowerStr: string;
+  generatorPowerPec: string;
+  generatorTodayEnergy: number;
+  generatorTodayEnergyStr: string;
+  generatorTodayEnergyPec: string;
+  generatorTotalEnergy: number;
+  generatorTotalEnergyStr: string;
+  generatorTotalEnergyPec: string;
+  weatherCount: number;
+  powerAmmeter2: number;
+  hourEnergyAmmeter2: number;
+  dayEnergyAmmeter2: number;
+  dayIncomeAmmeter2: number;
+  monthEnergyAmmeter2: number;
+  monthIncomeAmmeter2: number;
+  yearEnergyAmmeter2: number;
+  yearIncomeAmmeter2: number;
+  totalEnergyAmmeter2: number;
+  totalIncomeAmmeter2: number;
+  doubleAmmeterStoragePower: number;
+  doubleAmmeterStorageDayEnergy: number;
+  homeLoadMonthEnergyStr: string;
+  homeLoadYearEnergyStr: string;
+  homeLoadTotalEnergyStr: string;
+  gridMonthEnergy: number;
+  powerAmmeter2Str: string;
+  powerAmmeter2Pec: string;
+  dayEnergyAmmeter2Str: string;
+  dayEnergyAmmeter2Pec: string;
+  monthEnergyAmmeter2Str: string;
+  monthEnergyAmmeter2Pec: string;
+  yearEnergyAmmeter2Str: string;
+  yearEnergyAmmeter2Pec: string;
+  totalEnergyAmmeter2Str: string;
+  totalEnergyAmmeter2Pec: string;
+  doubleAmmeterStoragePowerStr: string;
+  doubleAmmeterStoragePowerPec: string;
+  doubleAmmeterStorageDayEnergyStr: string;
+  doubleAmmeterStorageDayEnergyPec: string;
+  inverterPowerStr: string;
+  monthEnergy1: number;
+  dayEnergy1: number;
+  yearEnergy1: number;
+  power1: number;
 };
+export interface PriceMap {
+  sell: string;
+  buy: string;
+}
