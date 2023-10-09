@@ -7,20 +7,6 @@ import type {
 } from "./types/apiResponse.js";
 config();
 
-export type APIURIConfig = {
-  verb: "POST" | "GET";
-  uri: string;
-};
-
-const userStationList: APIURIConfig = {
-  verb: "POST",
-  uri: "/v1/api/userStationList",
-};
-const stationDetail: APIURIConfig = {
-  verb: "POST",
-  uri: "/v1/api/stationDetail",
-};
-
 export default function (baseUrl: string, key: string, secret: string) {
   return {
     getUserStationList: async (
@@ -29,8 +15,8 @@ export default function (baseUrl: string, key: string, secret: string) {
       NmiCode?: string
     ): Promise<SolisAPIResponse<UserStationListResponse>> => {
       return await makeAPICall(
-        userStationList.verb,
-        userStationList.uri,
+        "POST",
+        "/v1/api/userStationList",
         { pageNo, pageSize, NmiCode },
         key,
         secret,
@@ -42,9 +28,65 @@ export default function (baseUrl: string, key: string, secret: string) {
       nmiCode?: string // NMI code
     ): Promise<SolisAPIResponse<PowerStationDetails>> => {
       return await makeAPICall(
-        stationDetail.verb,
-        stationDetail.uri,
+        "POST",
+        "/v1/api/stationDetail",
         { id, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getDataloggerList: async (
+      stationId: string,
+      pageNo = 1,
+      pageSize = 20,
+      NmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/collectorList",
+        { pageNo, pageSize, stationId, NmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getDataloggerDetail: async (
+      id: string,
+      sn?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/collectorDetail",
+        { id, sn },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getInverterList: async (
+      stationId: string,
+      pageNo = 1,
+      pageSize = 20,
+      NmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/inverterList",
+        { pageNo, pageSize, stationId, NmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getInverterDetail: async (
+      id: string,
+      sn?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/inverterDetail",
+        { id, sn },
         key,
         secret,
         baseUrl

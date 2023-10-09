@@ -41,7 +41,6 @@ export async function makeAPICall(
 ): Promise<any> {
   payload = JSON.stringify(payload);
   const headers = await generateHeaders(verb, uri, payload, secret, key);
-  console.log("HEADERS", headers);
   const response = await fetch(baseUrl + uri, {
     method: verb,
     body: payload,
