@@ -39,3 +39,6 @@ const inverter = await api.getInverterDetail(
   inverterList.data.page.records[0].id
 );
 console.log(inverter.data);
+
+const stationDay = await api.getStationDay(stationId, "GBP", "2023-10-09", 0);
+console.log(stationDay);

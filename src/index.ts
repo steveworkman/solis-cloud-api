@@ -92,5 +92,21 @@ export default function (baseUrl: string, key: string, secret: string) {
         baseUrl
       );
     },
+    getStationDay: async (
+      id: string,
+      money: string,
+      time: string,
+      timeZone: number,
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/stationDay",
+        { id, money, time, timeZone, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
   };
 }
