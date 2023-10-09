@@ -17,6 +17,7 @@ jobs:
         with:
           release-type: node
           package-name: solis-cloud-api
+          bump-minor-pre-major: true
       # The logic below handles the npm publication:
       - uses: actions/checkout@v4
         # these if statements ensure that a publication only occurs when
