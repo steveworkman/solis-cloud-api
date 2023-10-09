@@ -93,16 +93,124 @@ export default function (baseUrl: string, key: string, secret: string) {
       );
     },
     getStationDay: async (
-      id: string,
-      money: string,
-      time: string,
-      timeZone: number,
+      id: string, // Power station ID
+      money: string, // Currency code for monetary values
+      date: string, // YYYY-MM-DD
+      timeZone: number, // Appears to be the offset from UTC in hours
       nmiCode?: string
     ): Promise<SolisAPIResponse<any>> => {
       return await makeAPICall(
         "POST",
         "/v1/api/stationDay",
-        { id, money, time, timeZone, nmiCode },
+        { id, money, date, timeZone, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getStationMonth: async (
+      id: string, // Power station ID
+      money: string, // Currency code for monetary values
+      month: string, // Use YYYY-MM
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/stationMonth",
+        { id, money, month, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getStationYear: async (
+      id: string, // Power station ID
+      money: string, // Currency code for monetary values
+      year: string, // Use YYYY
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/stationYear",
+        { id, money, year, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getStationAll: async (
+      id: string, // Power station ID
+      money: string, // Currency code for monetary values
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/stationAll",
+        { id, money, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getInverterDay: async (
+      money: string, // Currency code for monetary values
+      date: string, // YYYY-MM-DD
+      timeZone: number, // Appears to be the offset from UTC in hours
+      id?: string, // Inverter ID
+      sn?: string, // Inverter Serial number
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/inverterDay",
+        { id, sn, money, date, timeZone, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getInverterMonth: async (
+      money: string, // Currency code for monetary values
+      month: string, // Use YYYY-MM
+      id?: string, // Inverter ID
+      sn?: string, // Inverter Serial number
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/inverterMonth",
+        { id, sn, money, month, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getInverterYear: async (
+      money: string, // Currency code for monetary values
+      year: string, // Use YYYY
+      id?: string, // Inverter ID
+      sn?: string, // Inverter Serial number
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/inverterYear",
+        { id, sn, money, year, nmiCode },
+        key,
+        secret,
+        baseUrl
+      );
+    },
+    getInverterAll: async (
+      money: string, // Currency code for monetary values
+      id?: string, // Inverter ID
+      sn?: string, // Inverter Serial number
+      nmiCode?: string
+    ): Promise<SolisAPIResponse<any>> => {
+      return await makeAPICall(
+        "POST",
+        "/v1/api/inverterAll",
+        { id, sn, money, nmiCode },
         key,
         secret,
         baseUrl
