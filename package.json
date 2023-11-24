@@ -22,13 +22,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.6.2",
-    "isomorphic-fetch": "^3.0.0",
-    "md5": "^2.3.0",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "dayjs": "^1.11.9",
+    "isomorphic-fetch": "^3.0.0",
+    "md5": "^2.3.0",
     "dotenv": "^16.3.1"
   }
 }
