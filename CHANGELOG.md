@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/steveworkman/solis-cloud-api/compare/v1.0.0...v1.0.1) (2023-11-24)
+
+
+### Bug Fixes
+
+* move depdendencies out of devDependencies ([9bd9a51](https://github.com/steveworkman/solis-cloud-api/commit/9bd9a515a05ab168ce3d0652d2184d8e30508999))
+
 ## 1.0.0 (2023-10-09)
 
 
