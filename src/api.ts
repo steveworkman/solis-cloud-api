@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone.js";
 import utc from "dayjs/plugin/utc.js";
 import advancedFormat from "dayjs/plugin/advancedFormat.js";
-import { md5InBase64, signContent } from "./authentication.js";
+import { createHash, createHmac } from "crypto";
 
 dayjs.extend(advancedFormat);
 dayjs.extend(utc);
@@ -17,10 +17,10 @@ export async function generateHeaders(
   secret: string,
   key: string
 ) {
-  const md5Payload = md5InBase64(payload);
+  const md5Payload = createHash("md5").update(payload).digest("base64");
   const date = dayjs().tz("GMT").format("ddd, D MMM YYYY HH:mm:ss [GMT]");
   const content = `${verb}\n${md5Payload}\napplication/json\n${date}\n${uri}`;
-  const sign = await signContent(content, secret);
+  const sign = createHmac("sha1",secret).update(content).digest("base64");
   const Authorization = `API ${key}:${sign}`;
 
   return {
