@@ -9,7 +9,7 @@
     "test": "node --loader tsx --test tests/index.spec.ts"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "type": "module",
   "keywords": [

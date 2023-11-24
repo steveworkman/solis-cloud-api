@@ -8,6 +8,8 @@ This is a NodeJS wrapper for the [Solis Cloud API](https://www.soliscloud.com/).
 npm i solis-cloud-api
 ```
 
+Note: NodeJS 18 or higher is required as the project uses node's native `fetch` module
+
 ## Usage
 
 You'll need to get access to Solis Cloud API which is available through a service ticket with Solis. [Read full instructions here](https://solis-service.solisinverters.com/en/support/solutions/articles/44002212561-api-access-soliscloud).
