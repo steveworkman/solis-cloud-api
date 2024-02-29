@@ -95,14 +95,14 @@ export default function (baseUrl: string, key: string, secret: string) {
     getStationDay: async (
       id: string, // Power station ID
       money: string, // Currency code for monetary values
-      date: string, // YYYY-MM-DD
+      time: string, // yyyy-MM-dd
       timeZone: number, // Appears to be the offset from UTC in hours
       nmiCode?: string
     ): Promise<SolisAPIResponse<any>> => {
       return await makeAPICall(
         "POST",
         "/v1/api/stationDay",
-        { id, money, date, timeZone, nmiCode },
+        { id, money, time, timeZone, nmiCode },
         key,
         secret,
         baseUrl
@@ -154,16 +154,15 @@ export default function (baseUrl: string, key: string, secret: string) {
     },
     getInverterDay: async (
       money: string, // Currency code for monetary values
-      date: string, // YYYY-MM-DD
+      time: string, // YYYY-MM-DD
       timeZone: number, // Appears to be the offset from UTC in hours
       id?: string, // Inverter ID
-      sn?: string, // Inverter Serial number
-      nmiCode?: string
+      sn?: string // Inverter Serial number
     ): Promise<SolisAPIResponse<any>> => {
       return await makeAPICall(
         "POST",
         "/v1/api/inverterDay",
-        { id, sn, money, date, timeZone, nmiCode },
+        { id, sn, money, time, timeZone },
         key,
         secret,
         baseUrl
