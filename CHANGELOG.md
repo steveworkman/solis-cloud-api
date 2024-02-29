@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/steveworkman/solis-cloud-api/compare/v1.1.0...v1.1.1) (2024-02-29)
+
+
+### Bug Fixes
+
+* getInverterDay and getStationDay sending incorrect params for v2 API ([f757251](https://github.com/steveworkman/solis-cloud-api/commit/f75725154088bd9b204dadae50dff08348af0092))
+
 ## [1.1.0](https://github.com/steveworkman/solis-cloud-api/compare/v1.0.1...v1.1.0) (2023-11-24)
 
 
