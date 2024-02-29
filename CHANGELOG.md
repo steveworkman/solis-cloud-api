@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/steveworkman/solis-cloud-api/compare/v1.0.1...v1.1.0) (2023-11-24)
+
+
+### Features
+
+* minimum node version updated to 18 ([55a7fdf](https://github.com/steveworkman/solis-cloud-api/commit/55a7fdfedab6e18626ed87e53520eee51062d9f0))
+* use native crypto module ([1d937e2](https://github.com/steveworkman/solis-cloud-api/commit/1d937e29c44223a581eb0070f25632c2885148cd))
+
 ## [1.0.1](https://github.com/steveworkman/solis-cloud-api/compare/v1.0.0...v1.0.1) (2023-11-24)
 
 
